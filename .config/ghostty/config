@@ -10,7 +10,6 @@ font-style-bold-italic = ExtraBold Italic
 #=============================================================#
 
 #=========================#=============================================================#
-keybind = clear
 copy-on-select = clipboard
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = performable:ctrl+v=paste_from_clipboard
@@ -18,6 +17,8 @@ keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = super+alt+comma=reload_config
 keybind = super+l=clear_screen
+keybind = ctrl+q=quit
+keybind = ctrl+shift+n=new_window
 #=============================================================#
 
 #=============================================================#
