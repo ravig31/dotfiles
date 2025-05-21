@@ -3,10 +3,6 @@ theme = Everforest Dark - Hard
 #=============================================================#
 font-family = SFMono Nerd Font
 font-size = 11
-font-style = Bold
-font-style-bold = ExtraBold
-font-style-italic = Bold Italic
-font-style-bold-italic = ExtraBold Italic
 #=============================================================#
 
 #=========================#=============================================================#
