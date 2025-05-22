@@ -3,14 +3,11 @@ PY_VENV_SUFFIX="bin/activate"
 REPO_PREFIX="${HOME}/main"
 
 # misc
-alias syncpws="cd ${HOME}/main/keepass && git fetch && git pull && git add . && git commit -m "Update" && git push && cd -"
 alias code='open -a "Visual Studio Code"'
-alias new_mfa="python ${HOME}/main/new_mfa.py"
 alias shellagain="source ${HOME}/.zshrc"
-alias zz="code ${HOME}/.zshrc"  # open shell quickly
-alias ll="ls -l"
-alias la="ls -a"
+alias zz="vim ${HOME}/.zshrc"  # open shell quickly
 alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
+alias vim='nvim'
 
 cmake-rebuild() {
   rm -rf ./build
