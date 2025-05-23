@@ -127,6 +127,26 @@
         {
             "wmClass": "update-manager",
             "mode": "float"
+        },
+        {
+            "wmClass": "gnome-control-center",
+            "mode": "float"
+        },
+        {
+            "wmClass": "com.mattjakeman.ExtensionManager",
+            "mode": "float"
+        },
+        {
+            "wmClass": "org.gnome.Settings",
+            "mode": "float"
+        },
+        {
+            "wmClass": "Timeshift-gtk",
+            "mode": "float"
+        },
+        {
+            "wmClass": "gnome-disks",
+            "mode": "float"
         }
     ]
 }

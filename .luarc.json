@@ -1,6 +1,10 @@
 {
     "diagnostics.globals": [
         "vim",
-        "on_attach"
+        "on_attach",
+        "capabilities"
+    ],
+    "diagnostics.disable": [
+        "undefined-doc-name"
     ]
 }
