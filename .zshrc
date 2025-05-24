@@ -55,3 +55,9 @@ alias foodinator='source "${VENV_PREFIX}/foodinator/${PY_VENV_SUFFIX}" && cd "${
 alias js-kaggle='source "${VENV_PREFIX}/js-kaggle/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/jane-street-real-time-market-data-forecasting"'
 alias tgbinance='source "${VENV_PREFIX}/tgbinance/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/tg_binance_bot"'
 alias gdd='source "${VENV_PREFIX}/google-doc-decode/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/google-doc-decode"'
+
+
+# PAPI
+export PAPI_DIR=~/main/papi/src/install/
+export PATH=${PAPI_DIR}/bin:$PATH
+export LD_LIBRARY_PATH=${PAPI_DIR}/lib:$LD_LIBRARY_PATH

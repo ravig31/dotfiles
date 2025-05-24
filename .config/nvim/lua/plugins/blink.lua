@@ -19,8 +19,27 @@ return {
         -- C-k: Toggle signature help (if signature.enabled = true)
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        keymap = { preset = 'default' },
+        keymap = {
+          -- set to 'none' to disable the 'default' preset
+          preset = 'none',
+          ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+          ['<C-e>'] = { 'hide', 'fallback' },
 
+          ['<Tab>'] = {
+            function(cmp)
+              if cmp.snippet_active() then return cmp.accept()
+              else return cmp.select_and_accept() end
+            end,
+            'snippet_forward',
+            'fallback'
+          },
+          ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+
+          ['<Up>'] = { 'select_prev', 'fallback' },
+          ['<Down>'] = { 'select_next', 'fallback' },
+          ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+          ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+        },
         appearance = {
             nerd_font_variant = 'mono'
         },
