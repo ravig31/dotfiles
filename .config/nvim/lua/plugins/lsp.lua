@@ -1,16 +1,16 @@
 return {
-  -- nvim-lspconfig plugin definition
   'neovim/nvim-lspconfig',
   dependencies = {
     'mason-org/mason.nvim',
     'mason-org/mason-lspconfig.nvim',
   },
-
-  -- All setup and configuration for nvim-lspconfig, mason, and mason-lspconfig
-  -- must go inside a 'config' function.
   config = function()
-    -- 1. Setup Mason (usually configured once globally, but can be done here if you prefer)
-    require('mason').setup({
+    local lspconfig = require('lspconfig')
+    local mason = require('mason')
+    local mason_lspconfig = require('mason-lspconfig')
+
+
+    mason.setup({
       ui = {
         icons = {
           package_installed = "✓",
@@ -20,35 +20,13 @@ return {
       }
     })
 
-    -- 2. Setup Mason-LSPConfig
-    require('mason-lspconfig').setup({
-      -- A list of servers to automatically install if they're not already installed
-      ensure_installed = { 'pylsp', 'lua_ls', 'clangd' },
+		local servers = { 'pylsp', 'lua_ls', 'clangd' }
+    mason_lspconfig.setup({
+      ensure_installed = servers,
     })
 
-    -- Set different settings for different languages' LSP
-    -- LSP list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    -- How to use setup({}): https://github.com/neovim/nvim-lspconfig/wiki/Understanding-setup-%7B%7D
-    --    - the settings table is sent to the LSP
-    --    - on_attach: a lua callback function to run after LSP attaches to a given buffer
-    local lspconfig = require('lspconfig')
 
-    -- Customized on_attach function
-    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-    vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-
-    -- Use an on_attach function to only map the following keys
-    -- after the language server attaches to the current buffer
     local on_attach = function(client, bufnr)
-      -- Enable completion triggered by <c-x><c-o>
----@diagnostic disable-next-line: deprecated
-      vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-      -- See `:help vim.lsp.*` for documentation on any of the below functions
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -69,36 +47,26 @@ return {
       end, bufopts)
     end
 
-    -- Configure each language
-    -- How to add LSP for a specific language?
-    -- 1. use `:Mason` to install corresponding LSP
-    -- 2. add configuration below
-    lspconfig.pylsp.setup({
-      on_attach = on_attach,
-    })
+    -- Global diagnostic keymaps (always active)
+    local opts = { noremap = true, silent = true }
+    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
-    -- Example for lua_ls
-    lspconfig.lua_ls.setup({
-      on_attach = on_attach,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' },
-          },
-          workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-          },
-          telemetry = {
-            enable = false,
-          },
-        },
-      },
-    })
+		for _, server_name in ipairs(servers) do
+			local server_setup = {}
+			local success, loaded_config = pcall(require, 'lsp.' .. server_name)
+			if success and loaded_config and loaded_config.config then
+				server_setup = loaded_config.config
+			else
+				 print('Warning: Server config for ' .. server_name .. ' not found in lua/lsp/' .. server_name .. '.lua')
+			end
+			local config = vim.tbl_deep_extend(
+				'force',
+				{ on_attach = on_attach }, -- Start with the common on_attach
+				server_setup -- Add server-specific config
+			)
+			lspconfig[server_name].setup(config)
+		end
 
-    -- Example for clangd (often needs specific compile_commands.json setup)
-    lspconfig.clangd.setup({
-      on_attach = on_attach,
-      -- cmd = { "clangd", "--background-index" }, -- Example of custom command
-    })
   end,
 }

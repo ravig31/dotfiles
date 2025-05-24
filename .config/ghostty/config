@@ -13,8 +13,8 @@ keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = super+alt+comma=reload_config
 keybind = super+l=clear_screen
-keybind = ctrl+q=quit
 keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+w=close_window
 #=============================================================#
 
 #=============================================================#

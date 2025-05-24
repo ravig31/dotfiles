@@ -7,9 +7,9 @@ return {
           ensure_installed = { "c", "lua", "vim", "vimdoc", "cpp", "python", "java", "javascript", "html", "bash"},
           sync_install = true,
           auto_install = true,
-          autotage = { enable = true }, 
+          autotage = { enable = true },
           highlight = { enable = true },
-          indent = { enable = true },  
+          indent = { enable = true },
         })
     end
  }

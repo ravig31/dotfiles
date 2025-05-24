@@ -147,6 +147,10 @@
         {
             "wmClass": "gnome-disks",
             "mode": "float"
+        },
+        {
+            "wmClass": "org.keepassxc.KeePassXC",
+            "mode": "float"
         }
     ]
 }

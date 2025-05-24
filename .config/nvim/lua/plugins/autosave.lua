@@ -1,10 +1,15 @@
 return {
-	"Pocco81/auto-save.nvim",
-	config = function()
-		 require("auto-save").setup {
-			-- your config goes here
-			-- or just leave it empty :)
-		 }
+		"Pocco81/auto-save.nvim",
+		config = function()
+		local condition = function (buf)
+				if vim.bo[buf].filetype == "harpoon" then
+						return false
+				end
+				return true
+		end
+		require("auto-save").setup {
+				condition = condition,
+		}
 	end,
 }
 
