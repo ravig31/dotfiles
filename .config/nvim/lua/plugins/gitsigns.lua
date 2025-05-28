@@ -3,8 +3,6 @@ return {
     config = function ()
         require('gitsigns').setup{
             on_attach = function(bufnr)
-                vim.notify("Gitsigns attached to buffer: " .. bufnr, vim.log.levels.INFO) -- Or use print()
-                -- print("Gitsigns attached to buffer: " .. bufnr) -- Check with :messages
 
                 local gitsigns = require('gitsigns')
 
@@ -15,6 +13,9 @@ return {
                 end
 
                 -- Navigation
+								map('n', '<leader>gb', gitsigns.blame, { desc = "Gitsigns: Blame Tree"})
+
+
                 map('n', ']c', function()
                     if vim.wo.diff then
                         vim.cmd.normal({']c', bang = true})
