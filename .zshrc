@@ -16,7 +16,7 @@ cmake-rebuild() {
 }
 
 # fast-fetch
-fastfetch --config ~/.config/fastfetch/config.jsonc
+# fastfetch --config ~/.config/fastfetch/config.jsonc
 
 # ssh
 eval `keychain --eval --quiet github-personal`
