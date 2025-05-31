@@ -56,6 +56,9 @@ alias js-kaggle='source "${VENV_PREFIX}/js-kaggle/${PY_VENV_SUFFIX}" && cd "${RE
 alias tgbinance='source "${VENV_PREFIX}/tgbinance/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/tg_binance_bot"'
 alias gdd='source "${VENV_PREFIX}/google-doc-decode/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/google-doc-decode"'
 
+# JAVA
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export PATH=${JAVA_HOME}/bin:$PATH
 
 # PAPI
 export PAPI_DIR=~/main/papi/src/install/

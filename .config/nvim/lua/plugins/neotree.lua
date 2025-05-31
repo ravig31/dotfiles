@@ -11,6 +11,6 @@ return {
     -- fill any relevant options here
   },
   config = function()
-      vim.keymap.set('n', '<C-b>', ':Neotree<CR>')
+      vim.keymap.set('n', '<C-b>', ':Neotree action=show position=left toggle=true<CR>')
   end
 }

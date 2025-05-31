@@ -6,6 +6,6 @@ return {
 				'mluders/comfy-line-numbers.nvim'
 		},
 		{
-			'numToStr/Comment.nvim',
+				'numToStr/Comment.nvim',
 		},
 }

@@ -1,7 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
 		dependencies = {
-				
 		},
     build = ":TSUpdate",
     config = function () 
