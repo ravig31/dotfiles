@@ -20,7 +20,7 @@ return {
 			}
 		})
 
-		local servers = { 'pylsp', 'lua_ls', 'clangd' }
+		local servers = { 'pylsp', 'lua_ls', 'clangd'}
 		mason_lspconfig.setup({
 			ensure_installed = servers,
 		})
