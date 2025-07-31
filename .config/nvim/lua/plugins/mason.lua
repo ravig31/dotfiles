@@ -21,7 +21,6 @@ return {
         "bashls",
         "clangd",
         "cssls",
-        "gopls",
         "html-lsp",
         "lua_ls",
         "tailwindcss",
@@ -35,7 +34,6 @@ return {
         "biome",
         "clang-format",
         "cmakelang",
-        "goimports",
         "prettier",
         "ruff",
         "shfmt",
@@ -43,7 +41,6 @@ return {
 
         -- linters
         "eslint_d",
-        "luacheck",
         "proselint",
         "shellcheck",
       },
