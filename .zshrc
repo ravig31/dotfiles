@@ -53,10 +53,7 @@ export VCPKG_ROOT="$HOME/vcpkg"
 export PATH="$VCPKG_ROOT:$PATH"
 
 #envs
-alias foodinator='source "${VENV_PREFIX}/foodinator/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/foodinator"'
-alias js-kaggle='source "${VENV_PREFIX}/js-kaggle/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/jane-street-real-time-market-data-forecasting"'
-alias tgbinance='source "${VENV_PREFIX}/tgbinance/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/tg_binance_bot"'
-alias gdd='source "${VENV_PREFIX}/google-doc-decode/${PY_VENV_SUFFIX}" && cd "${REPO_PREFIX}/google-doc-decode"'
+
 
 # JAVA
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
@@ -79,6 +76,3 @@ fpath=(/Users/ravindugamage/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.4.1
