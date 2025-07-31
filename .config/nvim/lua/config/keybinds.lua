@@ -1,4 +1,4 @@
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 vim.g.mapleader = " "
 -- Duplicate line(s) --
 vim.keymap.set('n', '<M-S-j>', 'yyP', { noremap = true, silent = true, desc = "Duplicate current line down" })
@@ -12,6 +12,9 @@ vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true
 vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { noremap = true, silent = true, desc = "Move current line down" })
 vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selected lines down" })
 
+-- select all --
+vim.keymap.set('n', '<C-a>', 'ggVG')
+vim.keymap.set('v', '<C-a>', 'ggVG')
 
 -- yank to clipboard --
 vim.keymap.set('n', '<C-c>', '<Plug>OSCYankOperator')

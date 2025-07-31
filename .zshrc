@@ -15,6 +15,11 @@ cmake-rebuild() {
   cmake -S . -B build/
 }
 
+# over the wire
+otw() {
+	ssh -p 2220 "$1"@bandit.labs.overthewire.org
+}
+
 # fast-fetch
 # fastfetch --config ~/.config/fastfetch/config.jsonc
 
@@ -40,9 +45,6 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
-export LDFLAGS="-L/opt/homebrew/opt/fmt/lib",
-export CPPFLAGS="-I/opt/homebrew/opt/fmt/include"
-
 #libomp
 export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/libomp/lib
 
@@ -64,3 +66,19 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PAPI_DIR=~/main/papi/src/install/
 export PATH=${PAPI_DIR}/bin:$PATH
 export LD_LIBRARY_PATH=${PAPI_DIR}/lib:$LD_LIBRARY_PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# rust
+. "$HOME/.cargo/env"
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ravindugamage/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1

@@ -1,6 +1,6 @@
 require("config.keybinds")
 require("config.options")
-
+require("core.lsp")
 
 
 ------- lazy --------------------------------------
@@ -20,10 +20,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 require("lazy").setup({
 	spec = {
-		{ import = "lazyvim.plugins.extras.vscode"},
 		{ import = "plugins" },
 	},
 	install = { colorscheme = { "tokyonight", "habamax" } },
@@ -35,3 +33,4 @@ require("lazy").setup({
 		enabled = false,
 	},
 })
+
