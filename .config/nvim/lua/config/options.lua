@@ -6,3 +6,4 @@ set.shiftwidth = 2
 set.number = true
 
 set.splitright = true
+set.clipboard = "unnamedplus"

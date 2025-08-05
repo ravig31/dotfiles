@@ -8,6 +8,8 @@ alias shellagain="source ${HOME}/.zshrc"
 alias zz="vim ${HOME}/.zshrc"  # open shell quickly
 alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
 alias vim='nvim'
+alias vimconf="vim ${HOME}/dotfiles/.config/nvim"
+
 
 cmake-rebuild() {
   rm -rf ./build
