@@ -15,8 +15,8 @@ alias sar='sudo apt remove -y'
 
 export TERM=xterm-256color
 # home-pc wol
-alias wollocal="wakeonlan A8:5E:45:53:45:A6"
-alias wolremote='ssh fedorasrv-remote "wol A8:5E:45:53:45:A6"'
+alias wolhome-pc="wakeonlan A8:5E:45:53:45:A6"
+alias wowhome-pc='ssh fedorasrv-remote "wol A8:5E:45:53:45:A6"'
 
 cmake-rebuild() {
   rm -rf ./build
