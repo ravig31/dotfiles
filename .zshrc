@@ -9,7 +9,9 @@ alias zz="vim ${HOME}/.zshrc"  # open shell quickly
 alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
 alias vim='nvim'
 alias vimconf="vim ${HOME}/dotfiles/.config/nvim"
+alias gdmstart='sudo systemctl start gdm.service'
 
+export TERM=xterm-256color
 
 cmake-rebuild() {
   rm -rf ./build

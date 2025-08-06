@@ -10,8 +10,6 @@ alias zz="code ${HOME}/.bashrc"  # open shell quickly
 alias ll="ls -l"
 alias la="ls -a"
 
-# fast-fetch
-fastfetch --config ~/.config/fastfetch/config
 
 # ssh
 eval `keychain --eval --quiet github-personal`
