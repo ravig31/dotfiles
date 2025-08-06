@@ -10,8 +10,8 @@ alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
 alias vim='nvim'
 alias vimconf="vim ${HOME}/dotfiles/.config/nvim"
 alias gdmstart='sudo systemctl start gdm.service'
-alias sai='sudo apt install'
-alias sar='sudo apt remove'
+alias sai='sudo apt install -y'
+alias sar='sudo apt remove -y'
 
 export TERM=xterm-256color
 
