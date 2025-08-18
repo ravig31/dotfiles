@@ -29,8 +29,8 @@ otw() {
 	ssh -p 2220 "$1"@bandit.labs.overthewire.org
 }
 
-# fast-fetch
-# fastfetch --config ~/.config/fastfetch/config.jsonc
+# envs
+alias env_cudf="cd $REPO_PREFIX/cudf && conda activate cudf_dev"
 
 # ssh
 eval `keychain --eval --quiet github-personal`
@@ -61,9 +61,6 @@ export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/opt/libomp/lib
 export VCPKG_ROOT="$HOME/vcpkg"
 export PATH="$VCPKG_ROOT:$PATH"
 
-#envs
-
-
 # JAVA
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export PATH=${JAVA_HOME}/bin:$PATH
@@ -85,3 +82,21 @@ fpath=(/Users/ravindugamage/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ravig31/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ravig31/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ravig31/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ravig31/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# CUDA
+export PATH="/usr/local/cuda/bin:$PATH"
