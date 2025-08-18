@@ -8,4 +8,7 @@ return {
 	{
 		'numToStr/Comment.nvim',
 	},
+	{
+		'sitiom/nvim-numbertoggle'
+	}
 }

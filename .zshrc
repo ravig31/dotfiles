@@ -1,19 +1,24 @@
+# Reminders
+echo "Do Daily OTW!\nDo Daily OTW!\nDo Daily OTW!"
+
+
 VENV_PREFIX="${HOME}/main/envs"
 PY_VENV_SUFFIX="bin/activate"
 REPO_PREFIX="${HOME}/main"
 
 # misc
-alias code='open -a "Visual Studio Code"'
 alias shellagain="source ${HOME}/.zshrc"
 alias zz="vim ${HOME}/.zshrc"  # open shell quickly
+
 alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
 alias vim='nvim'
-alias vimconf="vim ${HOME}/dotfiles/.config/nvim"
+alias vimconf='(cd ${HOME}/dotfiles/.config/nvim && vim)'
 alias gdmstart='sudo systemctl start gdm.service'
 alias sai='sudo apt install -y'
 alias sar='sudo apt remove -y'
 
 export TERM=xterm-256color
+
 # home-pc wol
 alias wolhome-pc="wakeonlan A8:5E:45:53:45:A6"
 alias wowhome-pc='ssh fedorasrv-remote "wol A8:5E:45:53:45:A6"'
@@ -31,6 +36,11 @@ otw() {
 
 # envs
 alias env_cudf="cd $REPO_PREFIX/cudf && conda activate cudf_dev"
+
+# VS code remote
+codessh() {
+	code --remote ssh-remote+homepc-local /home/ravig31/"$1"
+}
 
 # ssh
 eval `keychain --eval --quiet github-personal`

@@ -1,5 +1,13 @@
 vim.g.maplocalleader = " "
 vim.g.mapleader = " "
+
+-- Swtich tabs
+vim.keymap.set('n', '<leader>k', '<cmd>:bnext<CR>')
+vim.keymap.set('v', '<leader>k', '<cmd>:bnext<CR>')
+
+vim.keymap.set('n', '<leader>j', '<cmd>:bprev<CR>')
+vim.keymap.set('v', '<leader>j', '<cmd>:bprev<CR>')
+
 -- Duplicate line(s) --
 vim.keymap.set('n', '<M-S-j>', 'yyP', { noremap = true, silent = true, desc = "Duplicate current line down" })
 vim.keymap.set('v', '<M-S-j>', 'yP', { noremap = true, silent = true, desc = "Duplicate selected lines down" })
@@ -45,7 +53,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { desc = "Shorcut for returning to normal mode in terminal"})
 
 -- oil --
-vim.keymap.set("n", "<leader>-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leade>-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- nvim-dap --
 vim.keymap.set("n", "<Leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { desc = "Debugger step into" })
@@ -62,5 +70,3 @@ vim.keymap.set(
 vim.keymap.set("n", "<Leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger reset" })
 vim.keymap.set("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
 
--- rustaceanvim
-vim.keymap.set("n", "<Leader>dt", "<cmd>lua vim.cmd('RustLsp testables')<CR>", { desc = "Debugger testables" })
