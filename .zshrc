@@ -2,10 +2,6 @@
 echo "Do Daily OTW!\nDo Daily OTW!\nDo Daily OTW!"
 
 
-# Reminders
-echo "Do Daily OTW!\nDo Daily OTW!\nDo Daily OTW!"
-
-
 VENV_PREFIX="${HOME}/main/envs"
 PY_VENV_SUFFIX="bin/activate"
 REPO_PREFIX="${HOME}/main"
@@ -43,11 +39,6 @@ otw() {
 
 # envs
 alias env_cudf="cd $REPO_PREFIX/cudf && conda activate cudf_dev"
-
-# VS code remote
-codessh() {
-	code --remote ssh-remote+homepc-local /home/ravig31/"$1"
-}
 
 # VS code remote
 codessh() {
