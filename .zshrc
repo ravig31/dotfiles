@@ -14,10 +14,7 @@ alias zz="vim ${HOME}/.zshrc"  # open shell quickly
 alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
 alias vim='nvim'
 alias vimconf='(cd ${HOME}/dotfiles/.config/nvim && vim)'
-alias vimconf='(cd ${HOME}/dotfiles/.config/nvim && vim)'
 alias gdmstart='sudo systemctl start gdm.service'
-alias sai='sudo apt install -y'
-alias sar='sudo apt remove -y'
 
 export TERM=xterm-256color
 
