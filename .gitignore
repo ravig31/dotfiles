@@ -1,3 +1,4 @@
 .config/ghostty/config
 .config/OpenRGB/logs/*
 .zshrc
+.bashrc
