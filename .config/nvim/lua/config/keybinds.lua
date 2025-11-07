@@ -1,12 +1,10 @@
 vim.g.maplocalleader = " "
 vim.g.mapleader = " "
 
--- Swtich tabs
-vim.keymap.set('n', '<leader>k', '<cmd>:bnext<CR>')
-vim.keymap.set('v', '<leader>k', '<cmd>:bnext<CR>')
+-- Switch to next buffer (Ctrl+Tab)
+vim.keymap.set('n', '<S-Tab>', '<cmd>bnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('v', '<S-Tab>', '<cmd>bnext<CR>', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>j', '<cmd>:bprev<CR>')
-vim.keymap.set('v', '<leader>j', '<cmd>:bprev<CR>')
 
 -- Duplicate line(s) --
 vim.keymap.set('n', '<M-S-j>', 'yyP', { noremap = true, silent = true, desc = "Duplicate current line down" })
