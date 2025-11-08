@@ -2,3 +2,4 @@
 .config/OpenRGB/logs/*
 .zshrc
 .bashrc
+.DS_Store
