@@ -1,0 +1,47 @@
+VENV_PREFIX="${HOME}/main/envs"
+PY_VENV_SUFFIX="bin/activate"
+REPO_PREFIX="${HOME}/main"
+
+# misc
+alias shellagain="source ${HOME}/.zshrc"
+alias zz="vim ${HOME}/.zshrc"  # open shell quickly
+
+
+alias icformat="cat ${HOME}/main/.clang-format >> ${PWD}/.clang-format"
+alias vim='nvim'
+alias vimconf='(cd ${HOME}/dotfiles/.config/nvim && vim)'
+
+
+# home-pc wol
+alias wolhome-pc="wakeonlan A8:5E:45:53:45:A6"
+alias wowhome-pc='ssh fedorasrv-remote "wol A8:5E:45:53:45:A6"'
+
+cmake-rebuild() {
+  rm -rf ./build
+  mkdir build
+  cmake -S . -B build/
+}
+
+# over the wire
+otw() {
+        ssh -p 2220 "$1"@bandit.labs.overthewire.org
+}
+
+
+# ssh
+eval `keychain --eval --quiet github-personal`
+
+# makefile
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+autoload -U compinit && compinit
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="hyperzsh"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# dotnet
+export PATH="$HOME/.dotnet:$PATH"
+export DOTNET_ROOT="$HOME/.dotnet"
+
