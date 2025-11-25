@@ -1,3 +1,4 @@
+./config/clangd
 .config/ghostty/config
 .config/OpenRGB/logs/*
 .zshrc
