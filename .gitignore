@@ -1,3 +1,4 @@
+.config/nvim/lua/plugins/blink.lua
 ./config/clangd
 .config/ghostty/config
 .config/OpenRGB/logs/*
