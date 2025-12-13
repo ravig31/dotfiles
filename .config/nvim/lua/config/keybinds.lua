@@ -1,6 +1,11 @@
 vim.g.maplocalleader = " "
 vim.g.mapleader = " "
 
+
+-- Copy
+vim.keymap.set('n', '<C-c>', '"+y', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-c>', 'V"+y', { noremap = true, silent = true })
+
 -- Switch to next buffer (Ctrl+Tab)
 vim.keymap.set('n', '<S-Tab>', '<cmd>bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('v', '<S-Tab>', '<cmd>bnext<CR>', { noremap = true, silent = true })
