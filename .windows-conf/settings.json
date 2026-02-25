@@ -11,10 +11,10 @@
             },
             "keys": "ctrl+c"
         },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
+        // {
+        //     "command": "paste",
+        //     "keys": "ctrl+v"
+        // },
         {
             "command": "find",
             "keys": "ctrl+shift+f"
@@ -40,7 +40,9 @@
             "font": 
             {
                 "face": "CaskaydiaMono Nerd Font"
-            }
+            },
+			"multiLinePasteWarning": false
+ 
         },
         "list": 
         [

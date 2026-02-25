@@ -3,7 +3,8 @@ refreshenv
 
 $env:Path += ";C:\ProgramData\chocolatey\bin"
 
-Set-PSReadlineKeyHandler -Key Tab -Function Complete
+# kubectl aliases
+. "$(Split-Path -Path $PROFILE)\kubectl_aliases.ps1"
 
 # Basic aliases
 Set-Alias touch ni
@@ -16,5 +17,11 @@ function zz { nvim $PROFILE }
 
 # git-aliases
 Import-Module git-aliases -DisableNameChecking
+
+# poshgit 
+Import-Module posh-git
+
+# PSReadLine
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
 oh-my-posh init pwsh --config 'spaceship' | Invoke-Expression
