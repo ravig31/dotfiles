@@ -11,10 +11,6 @@
             },
             "keys": "ctrl+c"
         },
-        // {
-        //     "command": "paste",
-        //     "keys": "ctrl+v"
-        // },
         {
             "command": "find",
             "keys": "ctrl+shift+f"
@@ -40,9 +36,7 @@
             "font": 
             {
                 "face": "CaskaydiaMono Nerd Font"
-            },
-			"multiLinePasteWarning": false
- 
+            }
         },
         "list": 
         [
@@ -83,22 +77,22 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
-                "guid": "{88a0f4f9-8f4f-5637-8145-e251aa3f13d5}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 18 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{02bc84e8-0189-550b-94cf-3a10b1cac7ff}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 18 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{2aae8fe6-a714-5f2c-8890-43205a8c77da}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{3c252011-188b-5618-b289-53f94fa2f60b}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },

@@ -5,3 +5,5 @@
 .zshrc
 .bashrc
 .DS_Store
+**/Modules/*
+.windows-conf/state.json

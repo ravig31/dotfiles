@@ -5,7 +5,7 @@ $env:Path += ";C:\ProgramData\chocolatey\bin"
 
 # kubectl aliases
 . "$(Split-Path -Path $PROFILE)\kubectl_aliases.ps1"
-
+function kalias() { cat "$(Split-Path -Path $PROFILE)\kubectl_aliases.ps1"}
 # Basic aliases
 Set-Alias touch ni
 Set-Alias ll  Get-ChildItem
@@ -24,4 +24,5 @@ Import-Module posh-git
 # PSReadLine
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
-oh-my-posh init pwsh --config 'spaceship' | Invoke-Expression
+# omp
+oh-my-posh init pwsh --config "~\dotfiles\.windows-conf\spaceship_custom.omp.json" | Invoke-Expression
