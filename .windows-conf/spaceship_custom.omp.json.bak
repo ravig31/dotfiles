@@ -2,59 +2,60 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
     {
-      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "template": "{{ .UserName }} ",
           "foreground": "lightYellow",
-          "type": "session",
-          "style": "plain"
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
         },
         {
-          "options": {
+          "foreground": "cyan",
+          "properties": {
             "style": "folder"
           },
+          "style": "plain",
           "template": "<#ffffff>in</> {{ .Path }} ",
-          "foreground": "cyan",
-          "type": "path",
-          "style": "plain"
+          "type": "path"
         },
         {
-          "options": {
+          "foreground": "#ff94df",
+          "properties": {
             "branch_icon": " <#ff94df><b>\ue0a0 </b></>"
           },
+          "style": "plain",
           "template": "<#ffffff>on</> {{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "foreground": "#ff94df",
-          "type": "git",
-          "style": "plain"
+          "type": "git"
         },
         {
-          "options": {
-            "display_virtual_env": true,
-            "home": "~"
-          },
-          "template": "<#ffffff>via</> \ue235 {{ .Venv }} ",
           "foreground": "lightBlue",
+          "properties": {
+            "home": "~",
+            "display_virtual_env": true
+          },
+          "style": "plain",
+          "template": "<#ffffff>via</> \ue235 {{ .Venv }} ",
           "type": "python",
-          "style": "plain"
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "segments": [
-        {
-          "template": "❯",
-          "foreground": "lightGreen",
-          "type": "text",
-          "style": "plain"
+          "when": "{{ if .Venv }}true{{ else }}false{{ end }}"
         }
       ],
-      "newline": true
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "lightGreen",
+          "style": "plain",
+          "template": "\u276f",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
     }
   ],
-  "version": 4,
-  "final_space": true
+  "final_space": true,
+  "version": 3
 }
