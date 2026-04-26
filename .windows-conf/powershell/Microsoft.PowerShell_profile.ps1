@@ -1,6 +1,10 @@
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 refreshenv
 
+#psmux
+function pmuxconf(){
+	vim "~/.config/psmux/psmux.conf"
+}
 
 function pyini() {
 	vim "~/AppData/Local/py.ini"
@@ -76,7 +80,6 @@ if (-not (Get-Command poetry -ErrorAction Ignore)) { $env:Path += ";C:\Users\A30
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
 }
-
 (& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
 
 # remove aliases

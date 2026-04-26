@@ -4,6 +4,10 @@
     "actions": 
     [
         {
+            "command": "unbound",
+            "keys": "ctrl+shift+v"
+        },
+        {
             "command": 
             {
                 "action": "copy",
@@ -23,6 +27,10 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
         }
     ],
     "copyFormatting": "none",
