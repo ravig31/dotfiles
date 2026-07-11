@@ -1,6 +1,12 @@
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 refreshenv
 
+# new symlink
+function New-SymbolicLink ($Path, $Target) { 
+    New-Item -Path $Path -ItemType SymbolicLink -Value $Target 
+}
+Set-Alias -Name ln -Value New-SymbolicLink
+
 #psmux
 function pmuxconf(){
 	vim "~/.config/psmux/psmux.conf"
@@ -47,6 +53,16 @@ function kpfn() {
 
 function kcgc() {
 	kubectl config get-contexts
+}
+
+# New vs user prompt
+function nuserprompt {
+    param([string]$Name = "default")
+    
+    $Path = "$env:APPDATA\Code\User\prompts\$Name.prompt.md"
+    
+    $null = New-Item -Path $Path -ItemType File -Force
+    code $Path
 }
 
 # Basic aliases
