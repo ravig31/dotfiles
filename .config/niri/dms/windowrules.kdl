@@ -1,0 +1,19 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1791808948040075420 @name=com.danklinux.dms
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}
+
+// @id=wr_1791808957943501939 @name=KeePassXC
+window-rule {
+    match app-id="^KeePassXC$"
+    open-floating true
+}
+
+// @id=wr_1791808973034269881 @name=Open Maximised
+window-rule {
+    open-maximized true
+}

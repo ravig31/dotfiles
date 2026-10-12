@@ -1,0 +1,18 @@
+input {
+    keyboard {
+        xkb {
+            layout "us" // change to your layout if needed
+            options "ctrl:nocaps,shift:both_capslock"
+        }
+    }
+}
+
+layout {
+    focus-ring {
+        on
+        width 2
+        active-color "#434241"
+        inactive-color "#2a2929"
+        urgent-color "#c2180c"
+    }
+}
