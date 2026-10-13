@@ -3,6 +3,9 @@ import = ["~/.config/alacritty/themes/themes/ayu_dark.toml"]
 working_directory = "None"
 live_config_reload = true
 
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
 
 [window]
 dimensions = { columns = 100, lines = 30 }
