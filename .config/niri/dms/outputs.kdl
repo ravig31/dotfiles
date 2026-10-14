@@ -10,6 +10,6 @@ output "DP-3" {
 output "DP-2" {
     mode "2560x1440@143.998"
     scale 1
-    position x=1468 y=588
+    position x=1445 y=444
 }
 
