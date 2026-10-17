@@ -14,10 +14,9 @@ binds {
     F7 hotkey-overlay-title="Media: Previous Track" { spawn "dms" "ipc" "call" "mpris" "previous"; }
     F8 hotkey-overlay-title="Media: Play/Pause" { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     F9 hotkey-overlay-title="Media: Next Track" { spawn "dms" "ipc" "call" "mpris" "next"; }
-    Mod+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+F6 hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+M hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle" ""; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+P hotkey-overlay-title="Cycle Display Profile" { spawn "dms" "ipc" "outputs" "cycleProfile"; }
     Mod+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
     Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+Shift+W hotkey-overlay-title="Create window rule" { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
@@ -95,6 +94,7 @@ binds {
     Mod+Equal { set-column-width "+10%"; }
     Mod+F { maximize-column; }
     Mod+H { focus-column-left; }
+		Mod+L { focus-column-right; }
     Mod+Home { focus-column-first; }
     Mod+J { focus-window-down; }
     Mod+K { focus-window-up; }
@@ -115,8 +115,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+Shift+F { fullscreen-window; }
     Mod+Shift+H { move-column-left; }
-    Mod+Shift+J { move-window-down; }
-    Mod+Shift+K { move-window-up; }
+		Mod+Shift+J { move-window-down; }
+		Mod+Shift+K { move-window-up; }
     Mod+Shift+L { move-column-right; }
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Minus { set-window-height "-10%"; }

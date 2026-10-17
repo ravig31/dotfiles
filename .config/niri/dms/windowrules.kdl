@@ -13,11 +13,6 @@ window-rule {
     open-floating true
 }
 
-// @id=wr_1791808973034269881 @name=Open Maximised
-window-rule {
-    open-maximized true
-}
-
 // @id=dms-floating-windows @name=DMS Floating Windows
 window-rule {
     match app-id="^com.danklinux.dms$"
