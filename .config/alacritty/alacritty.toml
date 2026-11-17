@@ -5,7 +5,7 @@ live_config_reload = true
 
 [terminal.shell]
 program = "/bin/zsh"
-args = ["-l"]
+args = ["-i"]
 
 [window]
 dimensions = { columns = 100, lines = 30 }
@@ -50,8 +50,8 @@ bindings = [
 { key = "PageDown", mods = "Shift", mode = "~Alt", action = "ScrollPageDown" },
 { key = "Home", mods = "Shift", mode = "~Alt", action = "ScrollToTop" },
 { key = "End", mods = "Shift", mode = "~Alt", action = "ScrollToBottom" },
-{ key = "V", mods = "Control", action = "Paste" },
-{ key = "C", mods = "Control", action = "Copy" },
+{ key = "V", mods = "Control|Shift", action = "Paste" },
+{ key = "C", mods = "Control|Shift", action = "Copy" },
 { key = "F", mods = "Control|Shift", action = "SearchForward" },
 { key = "B", mods = "Control|Shift", action = "SearchBackward" },
 { key = "C", mods = "Control|Shift", mode = "Vi", action = "ClearSelection" },

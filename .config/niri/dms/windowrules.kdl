@@ -1,4 +1,4 @@
-// DMS Window Rules - Managed by DankMaterialShell
+// DMS Window Rules - Managed by Dux Shell
 // Do not edit manually - changes may be overwritten
 
 // @id=wr_1791808948040075420 @name=com.danklinux.dms
@@ -7,14 +7,36 @@ window-rule {
     open-floating true
 }
 
-// @id=wr_1791808957943501939 @name=KeePassXC
+// @id=dms-floating-windows @name=DMS Floating Windows
 window-rule {
-    match app-id="^KeePassXC$"
+    match app-id="^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$"
     open-floating true
 }
 
-// @id=dms-floating-windows @name=DMS Floating Windows
+// @id=wr_1792896017670270949 @name=org.fcitx.fcitx5-config-qt
 window-rule {
-    match app-id="^com.danklinux.dms$"
+    match app-id="^org.fcitx.fcitx5-config-qt$"
     open-floating true
+}
+
+// @id=wr_1794137640841748788 @name=anki
+window-rule {
+    match app-id="^anki$"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+
+// @id=wr_1794138637037928479 @name=org.keepassxc.KeePassXC
+window-rule {
+    match app-id="^org.keepassxc.KeePassXC$"
+    open-floating true
+    default-column-width { fixed 1600; }
+    default-window-height { fixed 1200; }
+}
+
+// @id=dms-window-opaque @name=DMS Window Opaque
+window-rule {
+    match app-id="^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$"
+    opacity 1.00
 }

@@ -1,11 +1,14 @@
 input {
     keyboard {
         xkb {
-            layout "us" // change to your layout if needed
+            layout "us" 
             options "ctrl:nocaps,shift:both_capslock"
         }
     }
 }
+
+// chinese input 
+spawn-at-startup "fcitx5" "-d"
 
 layout {
     focus-ring {
